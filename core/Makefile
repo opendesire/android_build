@@ -1045,7 +1045,7 @@ else
 $(INTERNAL_OTA_PACKAGE_TARGET): scriptmode := $(TARGET_OTA_SCRIPT_MODE)
 endif
 
-ifdef CYANOGEN_WITH_GOOGLE
+ifdef OPENDESIRE_WITH_GOOGLE
 $(INTERNAL_OTA_PACKAGE_TARGET): backuptool := false
 else
 $(INTERNAL_OTA_PACKAGE_TARGET): backuptool := true
@@ -1084,7 +1084,7 @@ otapackage: $(INTERNAL_OTA_PACKAGE_TARGET)
 bacon: otapackage
 	$(hide) \
 		WANT_SQUASHFS=$(WANT_SQUASHFS) \
-		./vendor/cyanogen/tools/squisher
+		./vendor/opendesire/tools/squisher
 
 endif    # TARGET_DEVICE != generic
 endif    # TARGET_PRODUCT != sdk
